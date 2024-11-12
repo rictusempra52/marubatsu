@@ -144,7 +144,8 @@ function win(winners_cell) {
 }
 function draw() {
     result = game_result.draw;
-    alert("引き分け");
+    $(".message-area").text("×の勝ち");
+
 }
 
 
