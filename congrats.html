@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>おめでとう！</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      font-family: 'Arial', sans-serif;
+      background: black;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    #congrats {
+      position: absolute;
+      font-size: 5rem;
+      animation: zoomInOut 1.5s infinite;
+      text-shadow: 0 0 20px #fff, 0 0 30px #f0f, 0 0 40px #0ff, 0 0 50px #ff0;
+    }
+
+    @keyframes zoomInOut {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.2);
+      }
+    }
+
+    @keyframes flash {
+      0% {
+        background-color: #ff00ff;
+      }
+      25% {
+        background-color: #00ffff;
+      }
+      50% {
+        background-color: #ffff00;
+      }
+      75% {
+        background-color: #ff6600;
+      }
+      100% {
+        background-color: #ff00ff;
+      }
+    }
+
+    .confetti {
+      position: absolute;
+      width: 10px;
+      height: 20px;
+      background: red;
+      animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-10%) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="congrats">🎉 おめでとう！ 🎉</div>
+
+  <script>
+    document.body.style.animation = 'flash 3s infinite';
+
+    function createConfetti() {
+      const confetti = document.createElement('div');
+      confetti.classList.add('confetti');
+      confetti.style.left = Math.random() * 100 + 'vw';
+      confetti.style.background = `hsl(${Math.random() * 360}, 100%, 50%)`;
+      confetti.style.animationDuration = Math.random() * 3 + 2 + 's';
+      document.body.appendChild(confetti);
+
+      setTimeout(() => confetti.remove(), 5000);
+    }
+
+    setInterval(createConfetti, 100);
+  </script>
+</body>
+</html>

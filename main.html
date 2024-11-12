@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="title">まるばつゲーム</div>
+    <div class="game-area">
+      <div class="play-area">
+        <div class="row">
+          <button class="cell" data-row="0" data-column="0"></button>
+          <button class="cell" data-row="0" data-column="1"></button>
+          <button class="cell" data-row="0" data-column="2"></button>
+        </div>
+        <div class="row">
+          <button class="cell" data-row="1" data-column="0"></button>
+          <button class="cell" data-row="1" data-column="1"></button>
+          <button class="cell" data-row="1" data-column="2"></button>
+        </div>
+        <div class="row">
+          <button class="cell" data-row="2" data-column="0"></button>
+          <button class="cell" data-row="2" data-column="1"></button>
+          <button class="cell" data-row="2" data-column="2"></button>
+        </div>
+      </div>
+      <div class="message-area">あなたが先攻です</div>
+      <button class="restart">再開</button>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.6.3.js"
+      integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+      crossorigin="anonymous"
+    ></script>
+    <script src="./script.js"></script>
+  </body>
+</html>

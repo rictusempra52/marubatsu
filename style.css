@@ -1,0 +1,29 @@
+body {
+    text-align: center;
+}
+
+/* .play-area {
+    margin-left: auto;
+    margin-right: auto;
+} */
+
+.row {
+    width: fit-content;
+    margin: 0 auto;
+    display: flex;
+}
+
+.cell {
+    width: 50px;
+    height: 50px;
+    font-size: 20pt;
+    background-color: white;
+    border: solid 1px;
+}
+
+.message-area {
+    height: 150px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
