@@ -18,6 +18,9 @@ const game_result = Object.freeze({
 })
 let result = game_result.not_decided
 
+const message=$(".message-area")
+    
+
 $(".cell").on("click", function () {
     const row = $(this).data("row")
     const column = $(this).data("column")
@@ -49,13 +52,13 @@ function put_state(row, column, putstate) {
         case state.batsu:
             cell_state[row][column] = state.batsu
             target_cell.text("×");
-            $(".message-area").text("○の番");
+            message.text("○の番");
             break;
 
         case state.maru:
             cell_state[row][column] = state.maru
             target_cell.text("○");
-            $(".message-area").text("×の番");
+            message.text("×の番");
             break;
 
         default:
@@ -73,8 +76,8 @@ function reset_the_game() {
     ]
     result = game_result.not_decided
     $(".cell").text("");
-    $(".message-area").css("background-image", "none")
-    $(".message-area").text("あなたが先攻です");
+    message.css("background-image", "none")
+    message.text("あなたが先攻です");
 
 }
 
@@ -125,26 +128,26 @@ function check_game_result() {
     }
 }
 function win(winners_cell) {
-    switch (winners_cell) {
+ switch (winners_cell) {
         case state.maru:
             result = game_result.maru_win;
-            $(".message-area").text("");
-            $(".message-area").css("background-image", "url(./img/you-win-2024-11-12.gif)")
-            $(".message-area").css("height", "200px")
+            message.text("");
+            message.css("background-image", "url(./img/you-win-2024-11-12.gif)")
+            message.css("height", "200px")
             // 10秒間の紙吹雪を開始
             startConfetti(10000);
             break;
 
         case state.batsu:
             result = game_result.batsu_win;
-            $(".message-area").text("×の勝ち");
+            message.text("×の勝ち");
             break;
     }
 
 }
 function draw() {
     result = game_result.draw;
-    $(".message-area").text("×の勝ち");
+    message.text("ひきわけ");
 
 }
 
